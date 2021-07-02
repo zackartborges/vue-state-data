@@ -8,7 +8,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import IndexStates from "../components/IndexStates.vue";
 // @ is an alias to /src
 // import HelloWorld from "@/components/HelloWorld.vue";
@@ -24,17 +23,6 @@ export default {
   components: {
     // HelloWorld,
     IndexStates,
-  },
-  created: function () {
-    this.indexStates();
-  },
-  methods: {
-    indexStates: function () {
-      axios.get("api/states").then((response) => {
-        this.states = response.data;
-        console.log("all state data:", this.states);
-      });
-    },
   },
 };
 </script>
