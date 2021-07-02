@@ -2,15 +2,17 @@
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
-    <h1>Hey !</h1>
-    <index-states></index-states>
+    <h1>Some Data for all 50 states!</h1>
+    <!-- <index-states></index-states> -->
+    <state-map></state-map>
   </div>
 </template>
 
 <script>
-import IndexStates from "../components/IndexStates.vue";
+// import IndexStates from "../components/IndexStates.vue";
 // @ is an alias to /src
 // import HelloWorld from "@/components/HelloWorld.vue";
+import StateMap from "@/components/StateMap.vue";
 
 export default {
   data: function () {
@@ -22,7 +24,8 @@ export default {
   name: "Home",
   components: {
     // HelloWorld,
-    IndexStates,
+    // IndexStates,
+    StateMap,
   },
 };
 </script>
