@@ -23,10 +23,27 @@ export default {
   name: "StateMap",
   props: {},
   mounted: function () {
-    this.CreateMap();
+    // this.getStateData();
+    this.createMap();
   },
   methods: {
-    CreateMap: function () {
+    getStateData: function () {
+      var savedStateData = this.$store.vueState.savedSingleStateData;
+      if (savedStateData) {
+        this.existingStateData = savedStateData;
+      } else {
+        axios.get("api/states").then((response) => {
+          this.saveStateData = response.data;
+          this.$store.commit();
+        });
+      }
+
+      // axios.get("api/states").then((response) => {
+      //   this.states = response.data;
+      //   console.log("all state data:", this.states);
+      // });
+    },
+    createMap: function () {
       axios.get("api/states").then((response) => {
         this.states = response.data;
         console.log("all state data:", this.states);
@@ -37,7 +54,7 @@ export default {
         geographyConfig: {
           highlightBorderColor: "#bada55",
           popupTemplate: function (geography, data) {
-            return '<div class="hoverinfo">' + geography.fillKey + data.electoralVotes + " ";
+            return '<div class="hoverinfo">' + "State Data:" + data.electoralVotes + " ";
           },
           highlightBorderWidth: 3,
         },
