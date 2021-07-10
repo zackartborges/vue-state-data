@@ -2,7 +2,6 @@
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
-    <h1>Some Data for all 50 states!</h1>
     <!-- <index-states></index-states> -->
     <state-map></state-map>
   </div>
