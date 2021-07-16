@@ -7,9 +7,5 @@ export default new Vuex.Store({
   state: {
     savedStateData: {},
   },
-  mutations: {
-    saveStataData: (vueState, stateData) => {
-      vueState.savedSingleStateData = stateData;
-    },
-  },
 });
+ 
