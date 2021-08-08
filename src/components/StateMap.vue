@@ -54,14 +54,15 @@ export default {
             popupTemplate: function (geography, data) {
               return (
                 '<div class="hoverinfo">' +
-                geography.properties.name +
-                "<br>" +
-                " Median Household Income: " +
-                data.medianHouseholdIncome +
+                `${geography.properties.name} <br> Median Household Income: ${data.medianHouseholdIncome} <br> Share Population in Metro Areas: ${data.sharePopulationInMetroAreas} <br> Share Population with High School Degrees: ${data.sharePopulationWithHighSchoolDegree} <br> Share Unemployed Seasonal: ${data.shareUnemployedSeasonal}`
+                // geography.properties.name +
                 // "<br>" +
-                " Share Population in Metro Areas: " +
-                data.sharePopulationInMetroAreas +
-                " "
+                // " Median Household Income: " +
+                // data.medianHouseholdIncome +
+                // // "<br>" +
+                // " Share Population in Metro Areas: " +
+                // data.sharePopulationInMetroAreas +
+                // " "
               );
             },
             highlightBorderWidth: 3,
