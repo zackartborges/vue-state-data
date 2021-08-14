@@ -1,7 +1,7 @@
 <template>
   <div class="body">
     <h1>Map Of The United States</h1>
-    <div id="map_election" style="position: relative; width: 800px; height: 500px"></div>
+    <div id="map_election" style="position: center; width: 800px; height: 500px"></div>
   </div>
 </template>
 
@@ -84,5 +84,10 @@ export default {
 <style>
 html {
   background-color: darkkhaki;
+}
+.body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 </style>
