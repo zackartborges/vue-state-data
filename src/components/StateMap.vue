@@ -35,13 +35,15 @@ export default {
         this.states = response.data;
         let reformattedData = {};
         for (var index = 0, len = this.states.length; index < len; index++) {
-          reformattedData[index["state_code"]] = {
-            medianHouseholdIncome: index["median_household_income"],
-            sharePopulationInMetroAreas: index["share_population_in_metro_areas"],
-            sharePopulationWithHighSchoolDegree: index["share_population_with_high_school_degree"],
-            shareUnemployedSeasonal: index["share_unemployed_seasonal"],
-            stateAbbrev: index["state_abbrev"],
+          reformattedData[this.states[index]["state_code"]] = {
+            //reformatted data[0["state_code"]]
+            medianHouseholdIncome: [this.states[index]["median_household_income"]],
+            sharePopulationInMetroAreas: [this.states[index]["share_population_in_metro_areas"]],
+            sharePopulationWithHighSchoolDegree: [this.states[index]["share_population_with_high_school_degree"]],
+            shareUnemployedSeasonal: [this.states[index]["share_unemployed_seasonal"]],
+            stateAbbrev: [this.states[index]["state_abbrev"]],
           };
+          console.log("example:", reformattedData[index]);
         }
         // this.states.forEach((object) => {
         //   reformattedData[object["state_code"]] = {
@@ -51,10 +53,7 @@ export default {
         //     shareUnemployedSeasonal: object["share_unemployed_seasonal"],
         //     stateAbbrev: object["state_abbrev"],
         //   };
-        // }
-        // );
-        // var mappedStates = this.states.forEach(function(state) {
-        //   state.state_code
+        //   console.log("example:", reformattedData);
         // });
         var election = new Datamap({
           scope: "usa",
@@ -83,7 +82,7 @@ export default {
           data: reformattedData,
         });
         election.labels();
-        console.log("all state data:", this.states);
+        console.log("all state data:", this.reformattedData);
         // console.log("reformatted data:", reformattedData);
       });
     },
