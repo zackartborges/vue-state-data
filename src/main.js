@@ -5,8 +5,8 @@ import axios from "axios";
 import store from "./store/store";
 
 axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
-axios.defaults.baseURL = process.env.NODE_ENV === "development" ? "http://localhost:3000" : "/";
-
+axios.defaults.baseURL =
+  process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://state_data.herokuapp.com";
 
 Vue.config.productionTip = false;
 
