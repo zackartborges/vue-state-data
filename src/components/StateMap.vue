@@ -80,6 +80,7 @@ export default {
           fills: {
             defaultFill: "#EDDC4E",
           },
+
           data: reformattedData,
         });
         election.labels();
