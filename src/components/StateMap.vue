@@ -43,9 +43,9 @@ export default {
             shareUnemployedSeasonal: [this.states[index]["share_unemployed_seasonal"]],
             stateAbbrev: [this.states[index]["state_abbrev"]],
           };
-          console.log("all state data:", reformattedData);
           // console.log("example:", reformattedData[index]);
         }
+        console.log("all state data:", reformattedData);
         // this.states.forEach((object) => {
         //   reformattedData[object["state_code"]] = {
         //     medianHouseholdIncome: object["median_household_income"],
