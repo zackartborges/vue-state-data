@@ -34,15 +34,25 @@ export default {
       axios.get("api/states").then((response) => {
         this.states = response.data;
         let reformattedData = {};
-        this.states.forEach((object) => {
-          reformattedData[object["state_code"]] = {
-            medianHouseholdIncome: object["median_household_income"],
-            sharePopulationInMetroAreas: object["share_population_in_metro_areas"],
-            sharePopulationWithHighSchoolDegree: object["share_population_with_high_school_degree"],
-            shareUnemployedSeasonal: object["share_unemployed_seasonal"],
-            stateAbbrev: object["state_abbrev"],
+        for (var index = 0, len = this.states.length; index < len; index++) {
+          reformattedData[index["state_code"]] = {
+            medianHouseholdIncome: index["median_household_income"],
+            sharePopulationInMetroAreas: index["share_population_in_metro_areas"],
+            sharePopulationWithHighSchoolDegree: index["share_population_with_high_school_degree"],
+            shareUnemployedSeasonal: index["share_unemployed_seasonal"],
+            stateAbbrev: index["state_abbrev"],
           };
-        });
+        }
+        // this.states.forEach((object) => {
+        //   reformattedData[object["state_code"]] = {
+        //     medianHouseholdIncome: object["median_household_income"],
+        //     sharePopulationInMetroAreas: object["share_population_in_metro_areas"],
+        //     sharePopulationWithHighSchoolDegree: object["share_population_with_high_school_degree"],
+        //     shareUnemployedSeasonal: object["share_unemployed_seasonal"],
+        //     stateAbbrev: object["state_abbrev"],
+        //   };
+        // }
+        // );
         // var mappedStates = this.states.forEach(function(state) {
         //   state.state_code
         // });
@@ -74,7 +84,7 @@ export default {
         });
         election.labels();
         console.log("all state data:", this.states);
-        console.log("reformatted data:", reformattedData);
+        // console.log("reformatted data:", reformattedData);
       });
     },
   },
