@@ -43,6 +43,7 @@ export default {
             shareUnemployedSeasonal: [this.states[index]["share_unemployed_seasonal"]],
             stateAbbrev: [this.states[index]["state_abbrev"]],
           };
+          console.log("all state data:", reformattedData);
           // console.log("example:", reformattedData[index]);
         }
         // this.states.forEach((object) => {
@@ -82,7 +83,7 @@ export default {
           data: reformattedData,
         });
         election.labels();
-        console.log("all state data:", this.reformattedData);
+
         // console.log("reformatted data:", reformattedData);
       });
     },
