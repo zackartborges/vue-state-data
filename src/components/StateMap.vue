@@ -23,12 +23,12 @@ export default {
   },
   name: "StateMap",
   props: {},
-  created: function () {
+  // created: function () {
+  //   this.getStateData();
+  // },
+  mounted: function () {
     this.getStateData();
   },
-  // mounted: function () {
-  //   this.CreateMap();
-  // },
   methods: {
     getStateData: function () {
       axios.get("api/states").then((response) => {
@@ -43,7 +43,7 @@ export default {
             shareUnemployedSeasonal: [this.states[index]["share_unemployed_seasonal"]],
             stateAbbrev: [this.states[index]["state_abbrev"]],
           };
-          console.log("example:", reformattedData[index]);
+          // console.log("example:", reformattedData[index]);
         }
         // this.states.forEach((object) => {
         //   reformattedData[object["state_code"]] = {
